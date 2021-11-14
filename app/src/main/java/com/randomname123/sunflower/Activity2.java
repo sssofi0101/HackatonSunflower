@@ -27,6 +27,9 @@ public class Activity2 extends AppCompatActivity implements View.OnClickListener
                 startActivity(intent);
             }
         });
+        if (mode.offlineMode == true){
+            button2.setEnabled(false);
+        }
     }
     @Override
     public void onClick(View v) {

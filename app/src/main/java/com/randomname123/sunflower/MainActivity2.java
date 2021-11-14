@@ -28,9 +28,16 @@ public class MainActivity2 extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
-                finish();
-                System.exit(0);
+                Button btn1 = (Button) findViewById(R.id.button5);
+                btn1.setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent =new Intent(v.getContext(),Activity1.class);
+                        startActivity(intent);
+                        mode.offlineMode=false;
+                    }
+                });
             }
         });
 

@@ -78,6 +78,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 textInput.setText(Integer.toString(i));
             }
         }*/
+        Button button2=findViewById(R.id.button);
+        button.setOnClickListener(this);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView tx=findViewById(R.id.textView9);
+                tx.setText("643 ц/га");
+                //Intent intent =new Intent(v.getContext(),Activity2.class);
+                //startActivity(intent);
+            }
+        });
+        //закрыть форму
+        Button btn1 = (Button) findViewById(R.id.close);
+        btn1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Button btn1 = (Button) findViewById(R.id.close);
+                btn1.setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent =new Intent(v.getContext(),Activity1.class);
+                        startActivity(intent);
+                        mode.offlineMode=false;
+                    }
+                });
+            }
+        });
     }
 
 

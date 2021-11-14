@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
-public class sort_off extends AppCompatActivity implements View.OnClickListener{
+public class sort_off extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,23 +59,24 @@ public class sort_off extends AppCompatActivity implements View.OnClickListener{
         // Применяем адаптер к элементу spinner
         spinner.setAdapter(adapter);
         Button button=findViewById(R.id.button3);
-        button.setOnClickListener(this);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(v.getContext(),coordinates.class);
+                startActivity(intent);
+             }
+        });
 
-        Button btn1 = (Button) findViewById(R.id.button4);
+        Button btn1 = (Button) findViewById(R.id.close);
         btn1.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
-                finish();
-                System.exit(0);
+                Intent intent =new Intent(v.getContext(),Activity1.class);
+                startActivity(intent);
+                mode.offlineMode=false;
             }
         });
     }
 
-    @Override
-    public void onClick(View v) {
-        Intent intent =new Intent(this,coordinates.class);
-        startActivity(intent);
-    }
 }

@@ -1,16 +1,20 @@
 package com.randomname123.sunflower;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -19,7 +23,7 @@ public class coordinates extends AppCompatActivity implements View.OnClickListen
 
     private final int Pick_image = 1;
 
-
+    Button gps;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,8 +31,6 @@ public class coordinates extends AppCompatActivity implements View.OnClickListen
 
         Button button=findViewById(R.id.photos);
         button.setOnClickListener(this);
-
-
 
         Button next=findViewById(R.id.nextac);
 
@@ -50,7 +52,21 @@ public class coordinates extends AppCompatActivity implements View.OnClickListen
                 });
 
             }
-        }
+        gps = (Button) findViewById(R.id.gps);
+        ActivityCompat.requestPermissions(coordinates.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION }, 123); // запрос разрешение на использовние геопозиции
+        gps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                GPStracker g = new GPStracker(getApplicationContext()); //создаём трекер
+                Location l = g.getLocation(); // получаем координаты
+                if(l != null){
+                    double lat = l.getLatitude();  // широта
+                    double lon = l.getLongitude(); // долгота
+                    Toast.makeText(getApplicationContext(), "Широта: "+lat+"\nДолгота: "+lon, Toast.LENGTH_LONG).show(); // вывод в тосте здесь ты должна написать куда выводятчя координаты
+                }
+            }
+        });
+    }
 
 
 
