@@ -1,7 +1,34 @@
 <resources>
-    <string name="app_name">Sunflower</string>
-    <string name="hello">Привет!</string>
-    <string name="provider_gps">GPS</string>
-    <string name="provider_network">Network</string>
-    <string name="location_settings">Location settings</string>
+    <string name="app_name">OneSeed</string>
+    <string name="sort">Выберите сорт</string>
+    <string name="field">Местоположение </string>
+    <string name="weight">Масса 1000 семян (г)</string>
+    <string name="square">Введите площадь поля (га)</string>
+    <string name="calculate">Рассчитать</string>
+    <string name="save">Сохранить</string>
+    <string name="escape">Закончить работу</string>
+    <string name="nextPlace">Следующее место</string>
+
+    <string name="work">Работать</string>
+    <string name="online">онлайн</string>
+    <string name="offline">офлайн</string>
+    <string name="prev">Предыдущий сеанс</string>
+    <string name="newS">Новый сеанс</string>
+    <string name="name">Введите свои данные</string>
+    <string name="secondName">Фамилия</string>
+    <string name="firstName">Имя</string>
+    <string name="company">Компания</string>
+    <string name="next">далее</string>
+    <string name="photos">Загрузить фотографии</string>
+    <string name="gps">определить местоположение</string>
+    <string name="notes">Заметки</string>
+
+    <string name="end">Ваш оффлайн сеанс сохранен. Чтобы получить результаты, зайдите в приложение когда будете онлайн
+    с помощью функции "Предыдущий сеанс".</string>
+    <string name="ok">Понятно</string>
+    <string name="place">Местоположение</string>
+
+    <string name="result">Сохранить результат</string>
+    <string name="saved">Все результаты успешно получены</string>
+    <string name="good">Хорошо</string>
 </resources>

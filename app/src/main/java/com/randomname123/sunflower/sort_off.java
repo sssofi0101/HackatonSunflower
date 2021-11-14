@@ -1,8 +1,6 @@
 package com.randomname123.sunflower;
 
-
 import androidx.appcompat.app.AppCompatActivity;
-
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,15 +8,13 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.TextView;
 
-
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class sort_off extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_sort_off);
 
         String[] kinds = { "Дюрбан",
                 "ЛГ 5377",
@@ -62,37 +58,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Применяем адаптер к элементу spinner
         spinner.setAdapter(adapter);
-
-
-
-
-        int[] grams = {52, 70, 65, 68, 48, 58, 56, 72, 72, 73, 75, 50, 50, 50, 72, 42, 56, 50, 60, 58,
-                62, 50, 74, 71, 59, 51, 63, 63, 59, 71, 75, 54, 54, 70, 61};
         Button button=findViewById(R.id.button3);
         button.setOnClickListener(this);
 
-        /*TextView textInput = findViewById(R.id.editTextNumber);
-        String text = spinner.getSelectedItem().toString();
-        for (int i=0;i<kinds.length;i++){
-            if (kinds[i]==text){
-                textInput.setText(Integer.toString(i));
-            }
-        }*/
-    }
+        Button btn1 = (Button) findViewById(R.id.button4);
+        btn1.setOnClickListener(new View.OnClickListener() {
 
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                finish();
+                System.exit(0);
+            }
+        });
+    }
 
     @Override
     public void onClick(View v) {
-                fields.fieldsCount++;
-                Intent intent =new Intent(this,coordinates.class);
-                startActivity(intent);
+        Intent intent =new Intent(this,coordinates.class);
+        startActivity(intent);
     }
-
-/*button.setOnClickListener(new OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Intent intent = new Intent(this, YourActivityName.class);
-            startActivity(intent);
-        }
-    });*/
 }
